@@ -1,0 +1,347 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;1,600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #1f242d;
+    color: #fff;
+}
+
+.header {
+    top: 0;
+    left: 0;
+    padding: 2rem 9%;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 1.7rem;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    cursor: default;
+    opacity: 0;
+    animation: slideRight 1s ease forwards;
+}
+
+.navbar a {
+    font-size: 18px;
+    color: #fff;
+    text-decoration: none;
+    margin-left: 35px;
+    transition: .3s;
+    opacity: 0;
+    animation: slideTop .5s ease forwards;
+    animation-delay: calc(.2s * var(--i));
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: #0ef;
+}
+
+.home {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 70px 10%;
+}
+
+.home-content {
+    max-width: 600px;
+}
+
+.home-content h3 {
+    font-size: 1.9rem;
+    font-weight: 700px;
+    opacity: 0;
+    animation: slideBottom 1s ease forwards;
+    animation-delay: .7s;
+
+}
+
+.home-content h3:nth-of-type(2) {
+    margin-bottom: 30px;
+    animation: slideTop 1s ease forwards;
+    animation-delay: .7s;
+}
+
+.home-content h3 span {
+     color: #0ef;
+}
+
+.home-content h1 {
+    font-size: 3.5rem;
+    font-weight: 700px;
+    margin: -3px 0;
+    opacity: 0;
+    animation: slideRight 1s ease forwards;
+    animation-delay: 1s;
+}
+
+.home-content p{
+    font-size: 1.4rem;
+    opacity: 0;
+    animation: slideLeft 1s ease forwards;
+    animation-delay: 1s;
+}
+
+.home-img img{
+    max-width: 450px;
+    margin-right: -20px;
+    opacity: 0;
+    animation: zoomIn 1s ease forwards, floatImage 4s ease-in-out infinite;
+    animation-delay: 2s, 3s
+}
+
+.social-media a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid #0ef;
+    border-radius: 50%;
+    font-size: 25px;
+    color: #0ef;
+    text-decoration: none;
+    margin: 30px 15px 30px 0;
+    transition: .5s ease;
+    opacity: 0;
+    animation: slideLeft 1s ease forwards;
+    animation-delay: calc(.2s * var(--i));
+}
+
+.social-media a:hover {
+    background-color: #0ef;
+    color: #1f242d;
+    box-shadow: 0 0 20px #0ef;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 28px;
+    background: #0ef;
+    border-radius: 40px;
+    font-size: 16px;
+    color: #1f242d;
+    letter-spacing: 1px;
+    text-decoration: none;
+    font-weight: 600px;
+    opacity: 0;
+    animation: slideTop 1s ease forwards;
+    animation-delay: 2s;
+}
+
+.btn:hover {
+    box-shadow: 0 0 10px #0ef;
+    transition: 0.5s;
+}
+
+/* ANIMAÇÕES */
+
+@keyframes slideRight {
+    0% {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideTop {
+    0% {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideBottom {
+    0% {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideLeft {
+    0% {
+        transform: translateX(100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes zoomIn {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes floatImage {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-24px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* SCROLLREVEAL*/
+
+.home, .sobre , .projects{
+    visibility: hidden;
+}
+
+/* Sobre mim */
+
+.about {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2;
+    background: #2B2E40;
+}
+
+.about-img img {
+    width: 40vw ;
+    border-radius: 50px;
+    margin: 20px;
+}
+
+h2 span {
+    color: #0ef;
+}
+
+.blue {
+    color: #0ef;
+}
+
+.heading {
+    text-align: center;
+    font-size: 3rem;
+}
+
+.about-content h2 {
+    text-align: center;
+    line-height: 1.2;
+}
+
+.about-content h3 {
+    font-size: 1.8rem;
+    text-align: center;
+}
+
+.about-content p {
+    font-size: 1.1rem;
+    margin: 2rem 2rem 3rem ;
+    text-align: center;
+}
+
+/* Projetos */
+
+.projects h2 {
+    margin-bottom: 5rem;
+}
+
+.projects-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 20px;
+}
+
+.projects-container .projects-box {
+    flex: 1 1 30rem;
+    background: #2B2E40;
+    padding: 2rem;
+    text-align: center;
+    border: .2rem solid #1f242d;
+    transition: .5s ease;
+    border-radius: 25px;
+}
+
+.projects-container .projects-box:hover {
+    border-color: #0ef;
+    transform: scale(1.02);
+}
+
+.projects-box i {
+    font-size: 5rem;
+    color: #0ef;
+}
+
+.projects-box h3 {
+    font-size: 2rem;
+}
+
+.projects-box p {
+    font-size: 1rem;
+    margin: 1rem 0 3rem;
+}
+
+/* Footer */
+
+.btn-footer {
+    display: flex;
+    justify-content: center;
+    margin-top: 5rem;
+    margin-bottom: 2rem;
+    padding: 8px;
+    background: #1f242d;
+    border-radius: 40px;
+    font-size: 1.6rem;
+    color: #0ef;
+    letter-spacing: 1px;
+    text-decoration: none;
+    font-weight: 600px;
+    opacity: 0;
+    animation: slideTop 1s ease forwards;
+    animation-delay: 2s;
+}
+
+.btn-footer:hover {
+    box-shadow: 0 0 10px #0ef;
+    background: #0ef;
+    color: #1f242d;
+    transition: 0.5s; 
+}
+
+/* responsividade menu */
+
